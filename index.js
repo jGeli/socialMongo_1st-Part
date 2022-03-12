@@ -28,7 +28,7 @@ app.use(morgan("common"));
 app.use("/api/sms/auth", authRoute);
 app.use("/api/sms/users", userRoute);
 app.use("/api/sms/posts", postRoute);
-app.use("/api/sftp/upload", sftpRoute);
+app.use("/api/sftp", sftpRoute);
 
 app.listen(8800, () => {
   console.log("Backend server is running!");
