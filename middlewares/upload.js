@@ -5,11 +5,12 @@ const multer = require('multer');
 var storage = multer.diskStorage({
     
     destination: function (req, file, cb) {
-      cb(null, `/var/www/${process.env.RESOURCE_DIR}`)
+      cb(null, 'resources')
     },
 
     filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
+      console.log(file)
+      cb(null, Date.now() + '-' + file.originalname)
     }
   })
    

@@ -25,6 +25,8 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
+app.use('/static-file', express.static('resources'))
+
 app.use("/api/sms/auth", authRoute);
 app.use("/api/sms/users", userRoute);
 app.use("/api/sms/posts", postRoute);
