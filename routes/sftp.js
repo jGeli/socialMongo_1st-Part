@@ -9,6 +9,7 @@ router.post("/upload", upload.single('file'), async (req, res) => {
         res.status(200).json({message: 'success', file: req.file})
     } catch(err){
         console.log(err)
+        res.send(err)
     }
    
 });
