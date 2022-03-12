@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
+const sftpRoute = require("./routes/sftp");
 // const url = 'mongodb://127.0.0.1:27017/socialMongo'
 
 console.log(process.env.MONGO_URL)
@@ -27,6 +28,7 @@ app.use(morgan("common"));
 app.use("/api/sms/auth", authRoute);
 app.use("/api/sms/users", userRoute);
 app.use("/api/sms/posts", postRoute);
+app.use("/api/sftp/upload", sftpRoute);
 
 app.listen(8800, () => {
   console.log("Backend server is running!");
