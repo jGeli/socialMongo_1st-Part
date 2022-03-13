@@ -4,9 +4,11 @@ const app = express();
 const mongoose = require("mongoose");
 const helmet = require("helmet");
 const morgan = require("morgan");
+var bodyParser = require('body-parser');            
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
+
 const sftpRoute = require("./routes/sftp");
 // const url = 'mongodb://127.0.0.1:27017/socialMongo'
 
@@ -21,16 +23,31 @@ mongoose.connect(
 );
 
 //middleware
+
+
+
+
+app.use(bodyParser.json({limit:'50mb'})); 
+app.use(bodyParser.urlencoded({extended:true, limit:'50mb'})); 
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
+<<<<<<< HEAD
 app.use('/api/sms/static-file', express.static('resources'))
+=======
+
+
+app.use('/static-file', express.static('resources'))
+>>>>>>> 75755fcc913316ba533ca655babd93821c3b837f
 
 app.use("/api/sms/auth", authRoute);
 app.use("/api/sms/users", userRoute);
 app.use("/api/sms/posts", postRoute);
+<<<<<<< HEAD
 app.use("/api/sms", sftpRoute);
+=======
+>>>>>>> 75755fcc913316ba533ca655babd93821c3b837f
 
 app.listen(8800, () => {
   console.log("Backend server is running!");
