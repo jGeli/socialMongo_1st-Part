@@ -40,6 +40,7 @@ app.use('/static-file', express.static('resources'))
 app.use("/api/sms/auth", authRoute);
 app.use("/api/sms/users", userRoute);
 app.use("/api/sms/posts", postRoute);
+app.use("/api/sms/upload", sftpRoute);
 
 app.listen(8800, () => {
   console.log("Backend server is running!");
