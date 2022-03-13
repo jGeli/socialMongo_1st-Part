@@ -1,0 +1,26 @@
+# W S L Commands #
+   wsl --set-default-version 2
+   wsl -l -v
+   wsl --set-version distroname 2
+   wsl --shutdown
+   wsl --terminate <Distribution Name>
+   wsl --mount <DiskPath>
+
+sudo apt install npm, nodejs, yarn
+sudo apt-get install curl, git
+sudo apt install bpython
+
+node --version
+npm --version
+yarn --version
+
+#NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+	nvm install --lts
+	nvm install node
+	nvm use --lts
+	nvm ls
+
+
+LINUX file system root directory: \\wsl$\<DistroName>\home\<UserName>\Project
+WINDOWS file system root directory: C:\Users\<UserName>\Project or /mnt/c/Users/<UserName>/Project$
